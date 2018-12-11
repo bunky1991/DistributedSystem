@@ -285,7 +285,7 @@ public class Server {
 	public static boolean CheckAdmin() throws ClassNotFoundException, SQLException, IOException {
 		System.out.println("Server Running: Update: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 
 		ObjectInputStream inputFromClient = new ObjectInputStream(s.getInputStream());
 		loginAddress AdminLogin = (loginAddress) inputFromClient.readObject();
