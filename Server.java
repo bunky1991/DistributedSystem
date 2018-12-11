@@ -108,7 +108,7 @@ public class Server {
 		// check if these records are in database 
 		System.out.println("Server Running: Check Username: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 		// The query that will be sent to database
 		String query = "select * from studentInformation where username = ? and password  = ?";
 		PreparedStatement statement = conn.prepareStatement(query);
@@ -143,7 +143,7 @@ public class Server {
 
 		System.out.println("Server Running: addStudent: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 		String query = "insert into studentInformation(firstname, lastname, age, courseID, password, username)"
 				+ "values(?,?,?,?,?,?)";
 		PreparedStatement statement = conn.prepareStatement(query);
@@ -208,7 +208,7 @@ public class Server {
 	public static void viewDetails() throws ClassNotFoundException, SQLException, IOException {
 		System.out.println("Server Running: View Details: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 
 		ObjectInputStream inputFromClient = new ObjectInputStream(s.getInputStream());
 		loginAddress lg = (loginAddress) inputFromClient.readObject();
@@ -244,7 +244,7 @@ public class Server {
 	public static void Update() throws ClassNotFoundException, SQLException, IOException {
 		System.out.println("Server Running: Update: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 
 		ObjectInputStream inputFromClient = new ObjectInputStream(s.getInputStream());
 		changeDetails CD = (changeDetails) inputFromClient.readObject();
@@ -317,7 +317,7 @@ public class Server {
 	public static void toDelete() throws ClassNotFoundException, SQLException, IOException {
 		System.out.println("Server Running: Delete: Starting MYSql DataBase");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "!SamuelBan1991");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/students", "root", "CMD password");
 
 
 		ObjectInputStream inputFromClient = new ObjectInputStream(s.getInputStream());
